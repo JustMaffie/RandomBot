@@ -1,0 +1,11 @@
+{
+	"token": "Secret",
+	"prefix":"r.",
+	"links": {
+		"github": "https://github.com/JustMaffie/RandomBot",
+		"botinvite": "https://discordapp.com/api/oauth2/authorize?client_id=415580474597965846&permissions=67488833&scope=bot",
+		"serverinvite": "https://discord.gg/f57j7n2"
+	},
+	"owners": [197322731115642880],
+	"admins": [197322731115642880]
+}
