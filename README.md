@@ -6,16 +6,6 @@ Category            | People
 ------------------- | --------------------------
 Lead Developer      | JustMaffie#0001 ([@JustMaffie](https://github.com/JustMaffie))
 
-## Translators
-Language | Name
--------- | ----------------
-Chinese  | The Double-Eyed Bus#6889 ([@austinhuang0131](https://github.com/austinhuang0131))
-Dutch    | Auxim#2994 ([@GeoffreyWesthoff](https://github.com/GeoffreyWesthoff))
-French   | Yvan#5761 ([@lepeli](https://github.com/lepeli))
-French   | iDroid#4441 ([@iDroid27210](https://github.com/iDroid27210))
-German   | MrLar#8117 ([@MrLar](https://github.com/MrLar))
-Swedish  | Mackan#7196 ([@Sven65](https://github.com/Sven65))
-
 ## Installation
 1. `git clone https://github.com/JustMaffie/RandomBot`
 1. `cd RandomBot`
