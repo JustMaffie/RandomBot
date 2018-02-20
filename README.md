@@ -7,12 +7,11 @@ Category            | People
 Lead Developer      | JustMaffie#0001 ([@JustMaffie](https://github.com/JustMaffie))
 
 ## Installation
-1. `git clone https://github.com/JustMaffie/RandomBot`
-1. `cd RandomBot`
-1. `python3.5 -m pip install -r requirements.txt`
+1. Install `docker` and `docker-compose` on your operating system
+1. `git clone https://github.com/JustMaffie/RandomBot && cd RandomBot`
 1. `cp config.example.json config.json`
 1. Edit `config.json`
-1. `sudo sh ./run.sh`
+1. `sudo docker-compose up -d`
 
 ## Licence
 
