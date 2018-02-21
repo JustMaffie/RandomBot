@@ -16,6 +16,7 @@
     along with this program. If not, see <http://www.gnu.org/licenses/>.
 """
 
+import logging
 import discord
 from discord.ext import commands
 from randombot.config import config_from_file
@@ -23,8 +24,9 @@ import os
 from randombot.context import CustomContext
 
 class Bot(commands.AutoShardedBot):
-    def __init__(self, config_file):
+    def __init__(self, config_file, logger):
         self.config = config_from_file(config_file)
+        self.logger = logger
         super(Bot, self).__init__(command_prefix=self.config.prefix)
 
     async def get_context(self, message, *, cls=CustomContext):
@@ -36,13 +38,13 @@ class Bot(commands.AutoShardedBot):
         self.run(token)
 
     def load_extension(self, name):
-        print('LOADING EXTENSION {name}'.format(name=name))
+        self.logger.info('LOADING EXTENSION {name}'.format(name=name))
         if not name.startswith("modules."):
             name = "modules.{}".format(name)
         return super().load_extension(name)
 
     def unload_extension(self, name):
-        print('UNLOADING EXTENSION {name}'.format(name=name))
+        self.logger.info('UNLOADING EXTENSION {name}'.format(name=name))
         if not name.startswith("modules."):
             name = "modules.{}".format(name)
         return super().unload_extension(name)
@@ -69,7 +71,7 @@ class Bot(commands.AutoShardedBot):
         finally:
             loop.close()
 
-def make_bot():
+def make_bot(logger):
     config_file = "config.json"
-    bot = Bot(config_file)
+    bot = Bot(config_file, logger)
     return bot
