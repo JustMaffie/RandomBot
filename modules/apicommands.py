@@ -19,6 +19,7 @@
 from discord.ext import commands
 import discord
 import aiohttp
+import uuid
 
 class APICommandsModule:
     def __init__(self, bot):
@@ -42,6 +43,12 @@ class APICommandsModule:
         data = await resp.read()
         resp.close()
         return data
+
+    @commands.command()
+    async def password(self, ctx):
+        pwd = str(uuid.uuid4()).replace("-", "")
+        await ctx.author.send("Here is your random password: `{}`".format(pwd))
+        return await ctx.send("{} I've sent you a new password in DM".format(ctx.author.mention))
 
     @commands.command()
     async def trbmb(self, ctx):

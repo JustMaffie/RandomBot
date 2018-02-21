@@ -28,7 +28,7 @@ class EventsModule:
     async def on_ready(self):
         bot = self.bot
         game = discord.Game(name="with random API's")
-        await bot.change_presence(status=discord.Status.idle, game=game)
+        await bot.change_presence(status=discord.Status.online, game=game)
         self.bot.owner = await self.bot.application_info()
         info = [str(self.bot.user), "Discord.py version: {}".format(discord.__version__), 'Shards: {}'.format(self.bot.shard_count), 'Guilds: {}'.format(len(self.bot.guilds)),
             'Users: {}'.format(len(set([m for m in self.bot.get_all_members()]))), '{} modules with {} commands'.format(len(self.bot.cogs), len(self.bot.commands)),
