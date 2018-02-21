@@ -24,9 +24,10 @@ import os
 from randombot.context import CustomContext
 
 class Bot(commands.AutoShardedBot):
-    def __init__(self, config_file, logger):
+    def __init__(self, config_file, logger, startup_time):
         self.config = config_from_file(config_file)
         self.logger = logger
+        self.startup_time = startup_time
         super(Bot, self).__init__(command_prefix=self.config.prefix)
 
     async def get_context(self, message, *, cls=CustomContext):
@@ -71,7 +72,7 @@ class Bot(commands.AutoShardedBot):
         finally:
             loop.close()
 
-def make_bot(logger):
+def make_bot(logger, timenow):
     config_file = "config.json"
-    bot = Bot(config_file, logger)
+    bot = Bot(config_file, logger, timenow)
     return bot

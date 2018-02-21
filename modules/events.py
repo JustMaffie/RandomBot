@@ -20,19 +20,21 @@ from discord.ext import commands
 import discord
 import logging
 import traceback
+import time
 
 class EventsModule:
     def __init__(self, bot):
         self.bot = bot
 
     async def on_ready(self):
+        millis = int(round(time.time() * 1000))
         bot = self.bot
         game = discord.Game(name="with random API's")
         await bot.change_presence(status=discord.Status.online, game=game)
         self.bot.owner = await self.bot.application_info()
         info = ["", str(self.bot.user), "Discord.py version: {}".format(discord.__version__), 'Shards: {}'.format(self.bot.shard_count), 'Guilds: {}'.format(len(self.bot.guilds)),
             'Users: {}'.format(len(set([m for m in self.bot.get_all_members()]))), '{} modules with {} commands'.format(len(self.bot.cogs), len(self.bot.commands)),
-            "Owner: {}".format(str(self.bot.owner.owner))]
+            "Owner: {}".format(str(self.bot.owner.owner)), "Startup duration: {}ms".format(millis - bot.startup_time)]
         for string in info:
             self.bot.logger.info(string)
 
