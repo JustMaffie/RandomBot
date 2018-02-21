@@ -20,10 +20,19 @@ from discord.ext import commands
 import discord
 import platform
 import asyncio
+import time
 
 class InfoModule:
     def __init__(self, bot):
         self.bot = bot
+
+    @commands.command()
+    async def ping(self, ctx):
+        time1 = int(round(time.time()*1000))
+        message = await ctx.send("**Pinging...**")
+        time2 = int(round(time.time()*1000))
+        ping = round(time2-time1)
+        await message.edit(content="**The ping is {}ms**".format(ping))
 
     @commands.command()
     async def userinfo(self, ctx, user:discord.User=None):
