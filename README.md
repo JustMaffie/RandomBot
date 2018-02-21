@@ -13,6 +13,9 @@ Lead Developer      | JustMaffie#0001 ([@JustMaffie](https://github.com/JustMaff
 1. Edit `config.json`
 1. `sudo docker-compose up -d`
 
+### UVLoop
+In case you run a production instance of this bot on `Linux`, you are recommended to install `UVLoop`, this will severely speed up your bot.
+
 ## Licence
 
 ```
