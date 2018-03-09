@@ -29,8 +29,7 @@ try:
 except:
     # UVLoop can't be imported, it probably isn't installed, you are probably on Windows, UVLoop is optional but recommended for production instances
     logger.warn("UVLoop can't be imported, its recommended to install UVLoop for a production instance, you can safely ignore this message.")
-    logger.setLevel(logging.INFO)
-
+logger.setLevel(logging.INFO)
 from randombot import make_bot
 
 bot = make_bot(logger, timenow)
