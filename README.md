@@ -1,4 +1,4 @@
-# **This project has been permanently shut down and merged with [The Hammer](https://github.com/JustMaffie/TheHammer)!
+# This project has been permanently shut down and merged with [The Hammer](https://github.com/JustMaffie/TheHammer)!
 
 # RandomBot
 An open source Discord Bot to use a lot of random API's
